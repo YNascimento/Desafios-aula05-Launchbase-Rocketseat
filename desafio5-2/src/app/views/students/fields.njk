@@ -1,0 +1,66 @@
+<div class="infos">
+    <div>Avatar URL</div>
+    <div>
+        <input type="url" name="avatar_url" value="{{student.avatar_url}}" placeholder="http://...">
+    </div>
+</div>
+
+<div class="infos">
+    <div>Nome Completo</div>
+    <div>
+        <input type="text" name="name" value="{{student.name}}" placeholder="Digite seu nome aqui">
+    </div>
+</div>
+
+<div class="infos">
+    <div>Data de Nascimento</div>
+    <div>
+        <input type="date" name="birth" value="{{student.birth}}">
+    </div>
+</div>
+
+<div class="infos">
+    <div>E-mail</div>
+    <div>
+        <input type="email" name="email" value="{{student.email}}">
+    </div>
+</div>
+
+<div class="infos">
+    <div>Ano Escolar</div>
+    <select name="grade">
+        <option value="EF5" {% if student.grade == "EF5"%} selected {% endif %}>
+            5º Ano Ensino Fundamental
+        </option>
+        <option value="EF6" {% if student.grade == "EF6"%} selected {% endif %}>
+            6º Ano Ensino Fundamental
+        </option>
+        <option value="EF7" {% if student.grade == "EF7"%} selected {% endif %}>
+            7º Ano Ensino Fundamental
+        </option>
+        <option value="EF8" {% if student.grade == "EF8"%} selected {% endif %}>
+            8º Ano Ensino Fundamental
+        </option>
+        <option value="EF9" {% if student.grade == "EF9"%} selected {% endif %}>
+            9º Ano Ensino Fundamental
+        </option>
+        <option value="EM1" {% if student.grade == "EM1"%} selected {% endif %}>
+            1º Ano Ensino Médio
+        </option>
+        <option value="EM2" {% if student.grade == "EM2"%} selected {% endif %}>
+            2º Ano Ensino Médio
+        </option>
+        <option value="EM3" {% if student.grade == "EM3"%} selected {% endif %}>
+            3º Ano Ensino Médio
+        </option>
+    </select>
+</div>
+
+<div class="infos">
+    <div>Carga Horária</div>
+    <div>
+        <input type="number" name="carga" value="{{student.carga}}">
+    </div>
+</div>
+
+<button type="submit">Salvar</button>

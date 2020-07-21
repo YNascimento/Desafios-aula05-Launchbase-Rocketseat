@@ -1,0 +1,253 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap";
+:root{
+    --red-color: #A93226;
+    --lightRed-color: rgba(169,50,38, 0.8);
+    --lightYellow-color: #FCF3CF;
+    --darkYellow-color: #F1C40F;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body{
+    font-family: 'Roboto',sans-serif;
+    background-color: var(--lightYellow-color);
+}
+
+/****** HEADER ********/
+
+header{
+    background-color: var(--red-color);
+}
+
+.links{
+    padding: 32px 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+.links a{
+    color: #D0D3D4;
+    text-decoration: none;
+    position: relative;
+}
+.links a+a{
+    margin-left: 32px;
+}
+
+.links a.active{
+    font-weight: 700;
+    color: var(--darkYellow-color);
+}
+
+.links a:hover{
+    color:var(--darkYellow-color);
+}
+
+.links a::after{
+    content: '';
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    width: 0;
+    background-color: var(--darkYellow-color);
+    height: 1px;
+}
+.links a:hover::after{
+    width: 100%;
+    transition: width 0.4s cubic-bezier(0.42, 0, 0.32, 1.56);
+}
+
+/******* CARD PROF *******/
+.teacher-card{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    margin: 48px auto;
+    width: 800px;
+    min-height: 480px;
+    background-color: #eeeeee;
+    box-shadow: 0 0 3px -1px var(--red-color);
+    border-radius: 8px;
+
+    animation: showUp 700ms ease-in-out;
+}
+@keyframes showUp{
+    from{
+        opacity: 0;
+        transform: translateX(-2%) translateY(4%);
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.avatar{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.details{
+    padding: 32px;
+}
+
+.details h3{
+    font-size: 20px;
+    font-weight: 700;
+    color: #999;
+}
+
+.details .infos{
+    padding: 16px 0 4px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.details .infos:last-child{
+    border: none;
+}
+
+.details .infos div:nth-child(1){
+    font-size: 14px;
+    font-weight: 700;
+    color: #999;
+}
+.details .infos div:nth-child(2){
+    padding-top: 8px;
+}
+
+.infos div span{
+    background-color: var(--darkYellow-color);
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 4px;
+    margin-left: 0;
+    display: inline-block;
+}
+
+/******** FORM REGISTER ********/
+
+input , select{
+    background-color: #eeeeee;
+    width: 100%;
+    outline: none;
+    padding-top: 4px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+}
+input::placeholder{
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+select{
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+
+input[type='radio']{
+    width: initial;
+    margin-right: 4px;
+}
+
+button[type="submit"], .editBtn, #form-delete button[type='submit']{
+    padding: 8px 0;
+    margin-top: 32px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: var(--red-color);
+    color: var(--lightYellow-color);
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+button[type="submit"]:hover, .editBtn:hover, #form-delete button[type='submit']:hover{
+    background-color: var(--lightRed-color);
+}
+
+.editBtn{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+}
+
+#form-delete button[type='submit']{
+    margin-top: 16px;
+}
+
+/*INDEX INSTRUCTORS*/
+.table-container{
+    display: block;
+    padding: 40px;
+    box-sizing: border-box;
+    color: var(--red-color);
+    font-weight: 700;
+}
+
+.table-container table{
+    width: 100%;
+    border-spacing: 0;
+}
+
+.table-container thead{
+    text-align: left;
+}
+
+td,th{
+    padding: 8px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+th{
+    text-transform: uppercase;
+    color: #777;
+    font-size: 14px;
+}
+
+tbody tr:last-child td{
+    border-bottom: none;
+}
+
+tbody tr td:first-child{
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    align-items: center;
+}
+
+tbody tr td:first-child span{
+    width: 64px;
+    height: 64px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 1px 3px 6px -2px black;
+    border: 2px solid white;
+}
+
+tbody tr td:last-child a, .table-container a{
+    background-color: var(--darkYellow-color);
+    padding: 8px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--red-color);
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 8px;
+}
+tbody tr td:last-child a:hover, .table-container a:hover{
+    opacity: 0.7;
+}
+
+th:last-child, td:last-child{
+    text-align: center;
+}
+
+.table-container a{
+    display: inline-block;
+    margin-bottom: 16px;
+}
